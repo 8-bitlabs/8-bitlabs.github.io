@@ -1,0 +1,27 @@
+# For more see: http://jekyllrb.com/docs/permalinks/
+permalink: /Events/:year/:month/:day/:title
+
+# Shows events with dates in the future
+future: true
+
+exclude: [".gitignore", "CNAME", "README.md", "Gemfile"]
+highlighter: rouge
+
+# https://help.github.com/articles/migrating-your-pages-site-from-maruku
+markdown: kramdown
+
+title : 8-Bit Labs
+tagline: 8-Bit Labs
+description: Experiments with 8-Bit development, hardware and games.
+author :
+  name : Rob Prouse
+  email : rob@8bitlabs.ca
+  github : 8-bitlabs
+  twitter : rprouse
+#  feedburner : feedname
+
+# This is used in the Atom & RSS feeds and in the sitemap
+production_url: https://8bitlabs.ca
+rss_path: /rss.xml
+atom_path: /atom.xml
+host: 0.0.0.0
