@@ -230,11 +230,6 @@ section {
   display: block;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
 figcaption,
 figure,
 main {
@@ -995,15 +990,15 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2em;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 h4 {
@@ -1499,7 +1494,7 @@ table.table-alternating tbody tr:nth-of-type(even) {
 }
 
 article .article-title {
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 article .article-meta {
   color: #41403e;
