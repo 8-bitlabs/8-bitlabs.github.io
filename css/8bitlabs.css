@@ -4,6 +4,7 @@
   Global 8-Bit Labs Config
 */
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap);
 html {
   --primary: #41403e;
   --secondary: #0b74d5;
@@ -41,7 +42,7 @@ html {
   --white-dark-light-80: rgba(204, 204, 204, 0.03);
   --light-dark: rgba(0, 0, 0, 0.7);
   --white: white;
-  --main-background: white;
+  --main-background: #white;
   --main-background-light: white;
   --black: black;
   --primary-text: #272625;
@@ -958,8 +959,8 @@ pre code {
 html {
   color: #41403e;
   color: var(--primary);
-  font-family: "Press Start 2P", sans-serif;
-  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
 }
 
 p,
@@ -976,7 +977,7 @@ input,
 textarea,
 select,
 option {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1,
@@ -984,17 +985,23 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   font-family: "Press Start 2P", sans-serif;
   font-weight: normal;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.7rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 h3 {
@@ -1494,7 +1501,7 @@ table.table-alternating tbody tr:nth-of-type(even) {
 }
 
 article .article-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 article .article-meta {
   color: #41403e;
@@ -3305,7 +3312,7 @@ nav .collapsible > label {
 }
 
 html.dark body {
-  background: #41403e;
+  background: #343231;
 }
 .sidebar-title a {
   color: inherit;

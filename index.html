@@ -6,14 +6,14 @@ pagination:
 <h1>8-Bit Labs</h1>
 
 {% for post in paginator.posts %}
-<div class="paper container-lg">
-<article class="article">
-  <div class="article-content">
-    <h2 class="article-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-    <p>{{ post.content | strip_html | truncatewords: 32 }}</p>
-    <span class="article-meta">{{post.date | date: '%d %b %Y'}}</span>
-  </div>
-</article>
+<div class="paper container-lg post-list">
+  <article class="article">
+    <div class="article-content">
+      <h2 class="article-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+      <p>{{ post.content | strip_html | truncatewords: 32 }}</p>
+      <span class="article-meta">{{post.date | date: '%d %b %Y'}}</span>
+    </div>
+  </article>
 </div>
 {% endfor %}
 
