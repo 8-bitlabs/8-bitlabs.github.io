@@ -3,17 +3,6 @@ layout: default
 ---
 <article class="article-page">
   <div class="page-content">
-    {% if page.img %}
-    <div class="article-cover-image">
-      <figure>
-        <img class="article-image" src={{ "/assets/img/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
-        {% if page.fig-caption %}
-          <figcaption>{{page.fig-caption}}</figcaption>
-        {% endif %}
-      </figure>
-    </div> <!-- End Page Cover Image -->
-    {% else %}
-    {% endif %}
     <div class="article-content">
       <header class="article-header">
         <h1 class="article-title">{{page.title}}</h1>
