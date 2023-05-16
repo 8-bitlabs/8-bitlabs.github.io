@@ -6,6 +6,27 @@
   --spacing-company: 8px;
   --font-weight: 400;
   --border-radius: 0;
+  --header-height: 134px;
+}
+@media (min-width: 576px) {
+  :root {
+    --header-height: 200px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --header-height: 260px;
+  }
+}
+@media (min-width: 992px) {
+  :root {
+    --header-height: 300px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --header-height: 360px;
+  }
 }
 
 /* Typography */
@@ -25,7 +46,7 @@ small {
   background-image: url("/assets/img/header1.png");
   background-position: center;
   background-size: cover;
-  height: 320px;
+  height: var(--header-height);
 }
 
 header hgroup> :last-child {
