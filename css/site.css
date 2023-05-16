@@ -27,6 +27,25 @@
   }
 }
 
+
+
+[data-theme=light],
+:root:not([data-theme=dark]) {
+  --pagination-background: #edeff3;
+  --pagination-color: hsl(205, 10%, 50%);
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --pagination-background: #141e26;
+    --pagination-color: hsl(205, 10%, 50%);
+  }
+}
+[data-theme=dark] {
+  --pagination-background: #141e26;
+  --pagination-color: hsl(205, 10%, 50%);
+}
+
 /* Typography */
 h2,
 h3,
@@ -74,24 +93,16 @@ summary svg {
   margin-right: -8px;
 }
 
-/* Main */
-@media (min-width: 992px) {
-  main .grid {
-    grid-column-gap: var(--spacing-company);
-    grid-template-columns: auto 25%;
-  }
+code {
+  font-family: "Fira Mono", Menlo, Consolas, monospace;
 }
 
-form.grid {
-  grid-row-gap: 0;
-}
-
-/* Aside nav */
-aside img {
-  margin-bottom: 0.25rem;
-}
-
-aside p {
-  margin-bottom: var(--spacing-company);
-  line-height: 1.25;
+nav.pagination {
+  background-color: var(--pagination-background);
+  color: var(--pagination-color);
+  margin-top: -40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
 }

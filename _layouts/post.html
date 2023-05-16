@@ -5,14 +5,14 @@ layout: default
 
   <hgroup>
     <h2>{{page.title}}</h2>
-    <h3>{{page.date | date: '%d %b %Y'}}</h3>
+    <h3><span class="iconify" data-icon="mdi-calendar-month"></span> {{post.date | date_to_string}}</h3>
   </hgroup>
 
   {{content | markdownify}}
 
   <footer>
     {% for tag in page.tags %}
-    <a href="{{site.baseurl}}/tags/{{tag}}" role="button" class="secondary outline">&#35;{{ tag }}</a>
+    &#35;{{ tag }}
     {% endfor %}
   </footer>
 

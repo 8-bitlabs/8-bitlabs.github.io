@@ -7,7 +7,7 @@ pagination:
 <article>
   <hgroup>
     <h2><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-    <h3>{{post.date | date: '%d %b %Y'}}</h3>
+    <h3><span class="iconify" data-icon="mdi-calendar-month"></span> {{post.date | date_to_string}}</h3>
   </hgroup>
   <p>{{ post.content | strip_html | truncatewords: 100 }}</p>
 </article>

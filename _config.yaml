@@ -1,18 +1,4 @@
-# For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /Posts/:year/:month/:day/:title
-
-# Shows events with dates in the future
-future: true
-
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-date_format: "%b %-d, %Y"
-
-exclude: [".gitignore", "CNAME", "README.md", "Gemfile"]
-highlighter: rouge
-
-# Build settings
-markdown: kramdown
-
+# https://8bitlabs.ca
 title : 8-Bit Labs
 tagline: 8-Bit Labs
 description: Experiments with 8-Bit development, hardware and games.
@@ -21,7 +7,24 @@ author :
   email : rob@8bitlabs.ca
   github : 8-bitlabs
   twitter : rprouse
+safe: true
+timezone: America/New_York
 #  feedburner : feedname
+
+# For more see: http://jekyllrb.com/docs/permalinks/
+permalink: /Posts/:year/:month/:day/:title
+
+# Shows events with dates in the future
+future: true
+
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+date_format: "%d %b %Y"
+
+exclude: [".gitignore", "CNAME", "README.md", "Gemfile"]
+highlighter: rouge
+
+# Build settings
+markdown: kramdown
 
 # This is used in the Atom & RSS feeds and in the sitemap
 production_url: https://8bitlabs.ca

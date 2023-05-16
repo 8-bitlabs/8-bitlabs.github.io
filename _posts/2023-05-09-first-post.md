@@ -1,11 +1,9 @@
 ---
 layout: post
-status: publish
 published: true
+date: 2023-05-09 00:00:00 -0500
 title: Initializing 8-Bit Subsytems
-tags:
-- "8-Bit"
-- Intro
+tags: ["8-Bit", Intro]
 ---
 Journey Back to the 8-Bit Era: Welcome to My Lab!
 
