@@ -9,7 +9,7 @@ pagination:
     <h2><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
     <h3>{{post.date | date: '%d %b %Y'}}</h3>
   </hgroup>
-  <p>{{ post.content | strip_html | truncatewords: 32 }}</p>
+  <p>{{ post.content | strip_html | truncatewords: 100 }}</p>
 </article>
 {% endfor %}
 

@@ -1,9 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap);
 
 /* Global CSS variables */
 :root {
-  --spacing-company: 8px;
   --font-weight: 400;
   --border-radius: 0;
   --header-height: 134px;
@@ -49,18 +47,16 @@ small {
   height: var(--header-height);
 }
 
-header hgroup> :last-child {
-  color: var(--h3-color);
-}
-
-header hgroup {
-  margin-bottom: var(--spacing-company);
-}
-
 hgroup h2 {
   font-family: "Press Start 2P", sans-serif;
   font-weight: normal;
+  font-size: 1rem;
   color: var(--primary);
+}
+@media (min-width: 768px) {
+  hgroup h2 {
+    font-size: 1.2rem;
+  }
 }
 
 hgroup h2 a {

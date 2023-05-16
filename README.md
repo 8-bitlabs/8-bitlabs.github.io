@@ -21,4 +21,5 @@ GitHub will do this automatically when you push, but this allows you to view the
 
 # 8-Bit Labs
 
-The theme is created by me using a modified version of [PicoCSS](https://picocss.com/).
+- The theme is created by me using [PicoCSS](https://picocss.com/)
+- Icons are [Material Design](https://pictogrammers.com/library/mdi/)
