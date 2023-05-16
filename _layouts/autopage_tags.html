@@ -1,27 +1,21 @@
 ---
 layout: default
 ---
-<!-- Just some nice to have styles for the pager buttons -->
-<style>
-  ul.pager { text-align: center; list-style: none; }
-  ul.pager li {display: inline;border: 1px solid black; padding: 10px; margin: 5px;}
-</style>
+<article>
 
-<div class="home">
-
-  <h1 class="page-heading">#{% if page.autopages %}{{page.autopages.display_name}}{% endif %}</h1>
+  <h2>#{% if page.autopages %}{{page.autopages.display_name}}{% endif %}</h2>
 
   {{ content | markdownify }}
 
-  <ul class="post-list">
+  <ul>
     <!--
         Here is the main paginator logic called.
         All calls to site.posts should be replaced by paginator.posts
     -->
     {% for post in paginator.posts %}
       <li>
-        <a class="article-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        <span class="article-meta">{{post.date | date: '%d %b %Y'}}</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <span>{{post.date | date: '%d %b %Y'}}</span>
       </li>
     {% endfor %}
   </ul>
@@ -33,4 +27,4 @@ layout: default
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
-</div>
+</article>

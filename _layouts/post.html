@@ -1,25 +1,19 @@
 ---
 layout: default
 ---
-<article class="article-page">
-  <div class="page-content">
-    <div class="article-content">
-      <header class="article-header">
-        <h1 class="article-title">{{page.title}}</h1>
-      </header>
-      {{content | markdownify}}
-      <div class="row flex-middle article-footer">
-        <div class="col-3 article-meta">{{page.date | date: '%d %b %Y'}}</div>
-        <div class="col-9">
-          <div class="row flex-right">
-            {% for tag in page.tags %}
-            <button class="btn-small">
-              <a href="{{site.baseurl}}/tags/{{tag}}" class="tag">&#35;{{ tag }}</a>
-            </button>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div> <!-- End Wrap Content -->
-  </div> <!-- End Page Content -->
-</article> <!-- End Article Page -->
+<article>
+
+  <hgroup>
+    <h2>{{page.title}}</h2>
+    <h3>{{page.date | date: '%d %b %Y'}}</h3>
+  </hgroup>
+
+  {{content | markdownify}}
+
+  <footer>
+    {% for tag in page.tags %}
+    <a href="{{site.baseurl}}/tags/{{tag}}" role="button" class="secondary outline">&#35;{{ tag }}</a>
+    {% endfor %}
+  </footer>
+
+</article>

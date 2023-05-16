@@ -1,18 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 
 {% include head.html %}
 
 <body>
-  <div id="top" class="row site">
 
-    <div class='sm-12 md-8 col'>
-      <div class='paper'>
-        {{content}}
-      </div>
+    <!-- Hero -->
+    <div class="hero" data-theme="dark">
+      <nav class="container-fluid">
+        <ul>
+          <li>
+            <a href="/" class="contrast"><strong>8-Bit Labs</strong></a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <details role="list" dir="rtl">
+              <summary aria-haspopup="listbox" role="link" class="contrast">Theme</summary>
+              <ul role="listbox">
+                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+                <li><a href="#" data-theme-switcher="light">Light</a></li>
+                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details role="list" dir="rtl">
+              <summary aria-haspopup="listbox" role="link" class="contrast">Computers</summary>
+              <ul role="listbox">
+                <li><a href="#">Agon</a></li>
+                <li><a href="#">Ben Eater's 6502</a></li>
+                <li><a href="#">Commodore 64</a></li>
+                <li><a href="#">RC2014</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details role="list" dir="rtl">
+              <summary aria-haspopup="listbox" role="link" class="contrast">CPUs</summary>
+              <ul role="listbox">
+                <li><a href="#">6502</a></li>
+                <li><a href="#">8080</a></li>
+                <li><a href="#">Z80</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
     </div>
+    <!-- ./ Hero -->
 
-    {% include sidebar.html %}
-  </div>
+  <!-- Main -->
+  <main class="container">
+    {{content}}
+  </main>
+
+  <!-- Minimal theme switcher -->
+  <script src="/js/minimal-theme-switcher.js"></script>
 </body>
 </html>

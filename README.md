@@ -19,4 +19,6 @@ GitHub will do this automatically when you push, but this allows you to view the
 
 ## Theme
 
-The theme is created by me using a modified version of [PaperCSS](https://www.getpapercss.com/).
+# 8-Bit Labs
+
+The theme is created by me using a modified version of [PicoCSS](https://picocss.com/).
