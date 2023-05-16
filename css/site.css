@@ -52,6 +52,11 @@ summary[role="link"].contrast:is([aria-current], :hover, :active, :focus) {
   color: var(--contrast-hover);
 }
 
+summary svg {
+  margin-top: 5px;
+  margin-right: -8px;
+}
+
 /* Main */
 @media (min-width: 992px) {
   main .grid {
