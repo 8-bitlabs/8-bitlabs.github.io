@@ -5,6 +5,7 @@
   --font-weight: 400;
   --border-radius: 0;
   --header-height: 134px;
+  --spacing-header: 3rem;
 }
 @media (min-width: 576px) {
   :root {
@@ -80,6 +81,46 @@ hgroup h2 {
 
 hgroup h2 a {
   color: var(--primary);
+}
+
+header.container {
+  padding: var(--spacing-header) 0;
+}
+
+header.container hgroup> :last-child {
+  color: var(--primary);
+}
+
+header.container hgroup {
+  margin-bottom: var(--spacing-header);
+  background: rgba(0, 0, 0, 0.8);
+  margin-top: -40px;
+  padding-left: 30px;
+}
+
+header.container hgroup h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+header.container hgroup h2 {
+  display: none;
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  header.container hgroup {
+    margin-top: 0px;
+    padding-bottom: 15px;
+  }
+
+  header.container hgroup h1 {
+    text-align: left;
+  }
+
+  header.container hgroup h2 {
+    display: block;
+  }
 }
 
 /* Nav */
