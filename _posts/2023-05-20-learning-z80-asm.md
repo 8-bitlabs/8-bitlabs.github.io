@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 date: 2023-05-20 00:00:00 -0500
 title: Learning Z80 Assembly on the RC2014
 tags: [Z80, Assembly, RC2014, "CP/M"]
