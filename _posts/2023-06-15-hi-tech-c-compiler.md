@@ -94,10 +94,10 @@ Hello world
 This created `HELLO.COM` in the same drive. Running it outputed the expected
 `Hello world`.
 
-If I look at the program, it is a massive (for CP/M) 16K. If you don't need
+If I look at the program, it is a massive (for CP/M) 12K. If you don't need
 wildcard argument support and I/O redirection using pipes, you can use the `-N`
 option to link with the smaller `NRTCPM.OBJ` file instead of `CRTCPM.OBJ`. Doing
-so results in a 4K file.
+so results in a 6K file.
 
 You can also run with the `-Mfile.map` option to generate a linker map showing
 the library modules included and their sizes.
