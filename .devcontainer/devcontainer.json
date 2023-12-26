@@ -3,7 +3,7 @@
 	"dockerFile": "Dockerfile",
 	"appPort": 4000,
 	"extensions": [
-		"rebornix.Ruby"
+		"shopify.ruby-lsp"
 	],
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
