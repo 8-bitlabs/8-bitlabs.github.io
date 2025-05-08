@@ -1,4 +1,4 @@
 ---
 layout: tag
-tag: Ben Eater
+tag: [ 'Ben Eater' ]
 ---

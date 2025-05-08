@@ -1,4 +1,4 @@
 ---
 layout: tag
-tag: Agon
+tag: [ Agon ]
 ---

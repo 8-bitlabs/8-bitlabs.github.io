@@ -1,4 +1,4 @@
 ---
 layout: tag
-tag: Game Boy
+tag: [ 'Game Boy' ]
 ---

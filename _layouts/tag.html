@@ -2,9 +2,43 @@
 layout: default
 ---
 
-<h1>Posts tagged #{{page.tag}}</h1>
+<h1>Posts tagged with
+{% if page.tag.size > 1 %}
+  {% for tag in page.tag %}
+    {% if forloop.last %}
+      and #{{tag}}
+    {% elsif forloop.first %}
+      #{{tag}}
+    {% else %}
+      , #{{tag}}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  #{{page.tag[0]}}
+{% endif %}
+</h1>
 
-{% assign posts = site.posts | where_exp: "post", "post.tags contains page.tag" %}
+{% assign posts = '' | split: '' %}
+{% for post in site.posts %}
+  {% assign match = false %}
+  {% for tag in post.tags %}
+    {% assign downcased_tag = tag | downcase %}
+    {% for page_tag in page.tag %}
+      {% assign downcased_page_tag = page_tag | downcase %}
+      {% if downcased_tag == downcased_page_tag %}
+        {% assign match = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if match %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if match %}
+    {% assign posts = posts | push: post %}
+  {% endif %}
+{% endfor %}
+
 {% for post in posts %}
 <article>
   <hgroup>
