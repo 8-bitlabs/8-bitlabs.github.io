@@ -12,18 +12,18 @@ This post is a practical guide to the subset of monitor commands you will actual
 
 ## Top 10 Command Cheatsheet
 
-```txt
-a      assemble
-d      disassemble
-r      registers
-z      step into
-n      step over
-g      run
-m      memory dump
->      write bytes
-break  breakpoint
-watch  watch memory
-```
+| Command | Description |
+| ------- | ----------- |
+| a       | assemble |
+| d       | disassemble |
+| r       | registers |
+| z       | step into |
+| n       | step over |
+| g       | run |
+| m       | memory dump |
+| >       | write bytes |
+| break   | breakpoint |
+| watch   | watch memory |
 
 ## Entering the Monitor
 
