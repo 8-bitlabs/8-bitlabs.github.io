@@ -29,7 +29,7 @@ watch  watch memory
 
 From within VICE, open the monitor with:
 
-```
+```txt
 Alt + H
 ```
 
@@ -37,7 +37,7 @@ Alt + H
 
 You will see a prompt similar to:
 
-```
+```txt
 (C:$0801) >
 ```
 
@@ -65,7 +65,7 @@ For practice, `$C000` is a good default code location.
 
 To disassemble memory into 6502 instructions:
 
-```
+```txt
 d $C000
 ```
 
@@ -73,13 +73,13 @@ This disassembles forward from `$C000`.
 
 To disassemble a range:
 
-```
+```txt
 d $C000 $C050
 ```
 
 If you omit arguments:
 
-```
+```txt
 d
 ```
 
@@ -93,13 +93,13 @@ Disassembly respects labels if you define them, which becomes very useful later.
 
 To assemble code starting at a given address:
 
-```
+```txt
 a $C000
 ```
 
 You can now type one instruction per line:
 
-```
+```txt
 LDA #$06
 STA $D020
 RTS
@@ -115,13 +115,13 @@ The monitor automatically advances the address as instructions are entered.
 
 To display the CPU registers:
 
-```
+```txt
 r
 ```
 
 You will see output similar to:
 
-```
+```txt
 A:00 X:00 Y:00 SP:FF PC:C000 FL:24
 ```
 
@@ -129,13 +129,13 @@ A:00 X:00 Y:00 SP:FF PC:C000 FL:24
 
 You can directly set registers:
 
-```
+```txt
 r PC=$C000
 ```
 
 Or multiple registers at once:
 
-```
+```txt
 r A=$10, X=$00, Y=$00
 ```
 
@@ -145,7 +145,7 @@ The status register is referred to as `FL`.
 
 ### Step Into (Execute One Instruction)
 
-```
+```txt
 z
 ```
 
@@ -153,7 +153,7 @@ Each `z` executes exactly one instruction and then stops.
 
 To step multiple instructions:
 
-```
+```txt
 z 10
 ```
 
@@ -161,7 +161,7 @@ z 10
 
 If you encounter a `JSR` and want to execute it as a single step:
 
-```
+```txt
 n
 ```
 
@@ -171,7 +171,7 @@ This runs the subroutine internally and stops at the instruction after the `JSR`
 
 If you are already inside a subroutine:
 
-```
+```txt
 ret
 ```
 
@@ -181,13 +181,13 @@ Execution continues until the matching `RTS` or `RTI`.
 
 To resume execution from the current PC:
 
-```
+```txt
 g
 ```
 
 To set the PC and immediately run:
 
-```
+```txt
 g $C000
 ```
 
@@ -199,13 +199,13 @@ This is often used after assembling new code.
 
 To view memory as hexadecimal bytes:
 
-```
+```txt
 m $C000
 ```
 
 To view a range:
 
-```
+```txt
 m $C000 $C0FF
 ```
 
@@ -213,13 +213,13 @@ m $C000 $C0FF
 
 To view memory as PETSCII characters:
 
-```
+```txt
 i $0400 $07E7
 ```
 
 To view screen codes:
 
-```
+```txt
 ii $0400 $07E7
 ```
 
@@ -229,13 +229,13 @@ These are helpful when working with screen memory or character data.
 
 You can write raw bytes using the `>` command:
 
-```
+```txt
 > $C000 A9 06 8D 20 D0 60
 ```
 
 This is equivalent to assembling:
 
-```
+```txt
 LDA #$06
 STA $D020
 RTS
@@ -251,13 +251,13 @@ VICE uses a unified concept called **checkpoints**, which includes breakpoints, 
 
 Stop when code at an address executes:
 
-```
+```txt
 break exec $C000
 ```
 
 Start execution:
 
-```
+```txt
 g
 ```
 
@@ -267,7 +267,7 @@ Execution halts when the PC reaches `$C000`.
 
 To run until a specific address *once*:
 
-```
+```txt
 un $C050
 ```
 
@@ -277,7 +277,7 @@ The temporary breakpoint deletes itself after being hit.
 
 Break when memory is written to:
 
-```
+```txt
 watch store $D020
 ```
 
@@ -287,19 +287,19 @@ This is extremely useful when learning how code affects VIC-II registers.
 
 List checkpoints:
 
-```
+```txt
 break
 ```
 
 Delete one:
 
-```
+```txt
 del 2
 ```
 
 Disable / enable:
 
-```
+```txt
 disable 2
 enable 2
 ```
@@ -308,7 +308,7 @@ enable 2
 
 You can attach conditions to breakpoints:
 
-```
+```txt
 cond 2 if A==$00
 ```
 
@@ -327,25 +327,25 @@ Labels make disassembly and debugging far more readable.
 
 Add a label:
 
-```
+```txt
 al $C000 .main
 ```
 
 Show labels:
 
-```
+```txt
 shl
 ```
 
 Delete a label:
 
-```
+```txt
 dl .main
 ```
 
 Clear all labels:
 
-```
+```txt
 cl
 ```
 
