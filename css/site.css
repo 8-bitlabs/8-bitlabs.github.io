@@ -31,7 +31,8 @@
 
   /* Typography */
   --font-family: "VT323", monospace;
-  --font-size: 20px;
+  --font-size: 22px;
+  --typography-spacing-vertical: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -211,13 +212,8 @@ a:focus {
 hgroup h2 {
   font-family: var(--font-family);
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 2rem;
   color: var(--primary);
-}
-@media (min-width: 768px) {
-  hgroup h2 {
-    font-size: 1.2rem;
-  }
 }
 
 hgroup h2 a {
@@ -243,7 +239,7 @@ header.container hgroup {
 }
 
 header.container hgroup h1 {
-  font-size: 40px;
+  font-size: 42px;
   text-align: center;
 }
 
@@ -254,7 +250,7 @@ header.container hgroup h1 a {
 
 header.container hgroup h2 {
   display: none;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 @media (min-width: 768px) {
@@ -371,6 +367,7 @@ article {
   background-color: rgba(0, 37, 51, 0.6);
   border: 2px solid var(--crt-cyan);
   box-shadow: 0 0 10px var(--crt-cyan-glow);
+  padding: 1.5rem;
 }
 
 article header,
