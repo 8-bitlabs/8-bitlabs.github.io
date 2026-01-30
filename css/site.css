@@ -204,9 +204,17 @@ a:focus {
   background-image: url("/assets/img/header1.png");
   background-position: center;
   background-size: cover;
-  height: var(--header-height);
+  min-height: var(--header-height);
   border-bottom: 3px solid var(--crt-green);
   box-shadow: 0 0 20px var(--crt-green-glow);
+}
+
+/* On larger screens, use fixed height for consistent hero appearance */
+@media (min-width: 768px) {
+  .hero {
+    height: var(--header-height);
+    min-height: auto;
+  }
 }
 
 hgroup h2 {
@@ -222,6 +230,13 @@ hgroup h2 a {
 
 header.container {
   padding: var(--spacing-header) 0;
+}
+
+/* Reduce header padding on mobile to fit within hero */
+@media (max-width: 767px) {
+  header.container {
+    padding: 1rem 0;
+  }
 }
 
 header.container hgroup> :last-child {

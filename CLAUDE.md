@@ -15,6 +15,9 @@ bundle install
 # Serve locally with live reload (primary development command)
 bundle exec jekyll serve -l
 
+# Alternative: Run in Docker container
+docker run --rm -p 4000:4000 -v "$(pwd):/srv/jekyll" jekyll/jekyll:4 jekyll serve --watch --force_polling --host 0.0.0.0
+
 # Site available at http://localhost:4000
 ```
 
@@ -46,6 +49,15 @@ Content in Markdown...
 - **Includes**: `_includes/` has nav.html, head.html, pagination.html, analytics.html
 - **Styling**: PicoCSS framework (`css/pico.css`) + custom (`css/site.css`, `css/code.css`)
 - **Theme switcher**: `js/minimal-theme-switcher.js` handles dark/light/auto modes
+
+## Responsive Breakpoints
+
+CSS uses `--header-height` variable with breakpoints in `css/site.css`:
+- Mobile: < 576px (134px)
+- Small tablet: 576px+ (200px)
+- Tablet: 768px+ (260px)
+- Desktop: 992px+ (300px)
+- Large: 1200px+ (360px)
 
 ## Configuration
 
