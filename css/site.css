@@ -11,23 +11,23 @@
   --header-height: 134px;
   --spacing-header: 3rem;
 
-  /* Flare-On Color Palette */
-  --crt-cyan: #00aeef;
-  --crt-cyan-dim: rgba(0, 174, 239, 0.7);
-  --crt-cyan-glow: rgba(0, 174, 239, 0.35);
-  --crt-dark: #002533;
+  /* Green CRT Color Palette */
+  --crt-green: #33ff33;
+  --crt-green-dim: rgba(51, 255, 51, 0.7);
+  --crt-green-glow: rgba(51, 255, 51, 0.35);
+  --crt-dark: #0a1a0a;
   --crt-black: #000000;
-  --crt-light: #f0f0f0;
+  --crt-light: #e0ffe0;
 
   /* Override Pico CSS colors */
-  --primary: var(--crt-cyan);
+  --primary: var(--crt-green);
   --primary-hover: var(--crt-light);
-  --primary-focus: var(--crt-cyan-glow);
+  --primary-focus: var(--crt-green-glow);
   --background-color: var(--crt-black);
-  --color: var(--crt-cyan);
-  --muted-color: var(--crt-cyan-dim);
+  --color: var(--crt-green);
+  --muted-color: var(--crt-green-dim);
   --contrast: var(--crt-light);
-  --contrast-hover: var(--crt-cyan);
+  --contrast-hover: var(--crt-green);
 
   /* Typography */
   --font-family: "VT323", monospace;
@@ -60,18 +60,18 @@
 [data-theme=light],
 :root:not([data-theme=dark]) {
   --pagination-background: var(--crt-black);
-  --pagination-color: var(--crt-cyan-dim);
+  --pagination-color: var(--crt-green-dim);
 }
 
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --pagination-background: var(--crt-black);
-    --pagination-color: var(--crt-cyan-dim);
+    --pagination-color: var(--crt-green-dim);
   }
 }
 [data-theme=dark] {
   --pagination-background: var(--crt-black);
-  --pagination-color: var(--crt-cyan-dim);
+  --pagination-color: var(--crt-green-dim);
 }
 
 /* Force dark theme colors regardless of system preference */
@@ -79,12 +79,12 @@
 [data-theme=light],
 [data-theme=dark] {
   --background-color: var(--crt-black);
-  --color: var(--crt-cyan);
-  --primary: var(--crt-cyan);
+  --color: var(--crt-green);
+  --primary: var(--crt-green);
   --secondary: var(--crt-dark);
-  --muted-color: var(--crt-cyan-dim);
+  --muted-color: var(--crt-green-dim);
   --card-background-color: rgba(0, 37, 51, 0.8);
-  --card-border-color: var(--crt-cyan);
+  --card-border-color: var(--crt-green);
   --card-sectionning-background-color: rgba(0, 37, 51, 0.5);
 }
 
@@ -94,12 +94,12 @@
 
 /* Apply CRT effect to body */
 body {
-  background: radial-gradient(ellipse at center, var(--crt-cyan-glow) 0%, var(--crt-black) 100%);
+  background: radial-gradient(ellipse at center, var(--crt-green-glow) 0%, var(--crt-black) 100%);
   background-attachment: fixed;
   font-family: var(--font-family);
   font-size: var(--font-size);
-  color: var(--crt-cyan);
-  text-shadow: 0 0 4px var(--crt-cyan);
+  color: var(--crt-green);
+  text-shadow: 0 0 4px var(--crt-green);
   position: relative;
 }
 
@@ -163,8 +163,8 @@ body::after {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family);
-  color: var(--crt-cyan);
-  text-shadow: 0 0 8px var(--crt-cyan);
+  color: var(--crt-green);
+  text-shadow: 0 0 8px var(--crt-green);
   font-weight: 400;
 }
 
@@ -184,15 +184,15 @@ small {
 
 a {
   color: var(--crt-light);
-  text-shadow: 0 0 4px var(--crt-cyan);
+  text-shadow: 0 0 4px var(--crt-green);
   text-decoration: underline;
   transition: all 0.2s ease;
 }
 
 a:hover,
 a:focus {
-  color: var(--crt-cyan);
-  text-shadow: 0 0 10px var(--crt-cyan), 0 0 20px var(--crt-cyan);
+  color: var(--crt-green);
+  text-shadow: 0 0 10px var(--crt-green), 0 0 20px var(--crt-green);
 }
 
 /* =========================================
@@ -205,8 +205,8 @@ a:focus {
   background-position: center;
   background-size: cover;
   height: var(--header-height);
-  border-bottom: 3px solid var(--crt-cyan);
-  box-shadow: 0 0 20px var(--crt-cyan-glow);
+  border-bottom: 3px solid var(--crt-green);
+  box-shadow: 0 0 20px var(--crt-green-glow);
 }
 
 hgroup h2 {
@@ -231,8 +231,8 @@ header.container hgroup> :last-child {
 header.container hgroup {
   margin-bottom: var(--spacing-header);
   background: rgba(0, 0, 0, 0.9);
-  border: 2px solid var(--crt-cyan);
-  box-shadow: 0 0 15px var(--crt-cyan-glow), inset 0 0 30px rgba(0, 174, 239, 0.1);
+  border: 2px solid var(--crt-green);
+  box-shadow: 0 0 15px var(--crt-green-glow), inset 0 0 30px rgba(0, 174, 239, 0.1);
   margin-top: -40px;
   padding-left: 30px;
   padding-right: 30px;
@@ -244,7 +244,7 @@ header.container hgroup h1 {
 }
 
 header.container hgroup h1 a {
-  color: var(--crt-cyan);
+  color: var(--crt-green);
   text-decoration: none;
 }
 
@@ -281,7 +281,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--crt-cyan);
+  color: var(--crt-green);
 }
 
 summary[role="link"].contrast:is([aria-current], :hover, :active, :focus) {
@@ -302,14 +302,14 @@ code {
   font-family: "Fira Mono", "VT323", Menlo, Consolas, monospace;
   background-color: rgba(0, 37, 51, 0.8);
   color: var(--crt-light);
-  border: 1px solid var(--crt-cyan);
+  border: 1px solid var(--crt-green);
   text-shadow: none;
 }
 
 pre {
   background-color: rgba(0, 37, 51, 0.9);
-  border: 2px solid var(--crt-cyan);
-  box-shadow: 0 0 10px var(--crt-cyan-glow), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--crt-green);
+  box-shadow: 0 0 10px var(--crt-green-glow), inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 pre code {
@@ -329,8 +329,8 @@ nav.pagination {
   padding-bottom: 15px;
   padding-left: 30px;
   padding-right: 30px;
-  border: 2px solid var(--crt-cyan);
-  box-shadow: 0 0 10px var(--crt-cyan-glow);
+  border: 2px solid var(--crt-green);
+  box-shadow: 0 0 10px var(--crt-green-glow);
 }
 
 /* =========================================
@@ -341,9 +341,9 @@ button,
 [role="button"],
 input[type="submit"],
 input[type="button"] {
-  background-color: var(--crt-cyan);
+  background-color: var(--crt-green);
   color: var(--crt-dark);
-  border: 3px solid var(--crt-cyan);
+  border: 3px solid var(--crt-green);
   font-family: var(--font-family);
   text-shadow: none;
   transition: all 0.2s ease;
@@ -354,9 +354,9 @@ button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
   background-color: var(--crt-dark);
-  color: var(--crt-cyan);
-  border: 3px dashed var(--crt-cyan);
-  box-shadow: 0 0 15px var(--crt-cyan-glow);
+  color: var(--crt-green);
+  border: 3px dashed var(--crt-green);
+  box-shadow: 0 0 15px var(--crt-green-glow);
 }
 
 /* =========================================
@@ -365,8 +365,8 @@ input[type="button"]:hover {
 
 article {
   background-color: rgba(0, 37, 51, 0.6);
-  border: 2px solid var(--crt-cyan);
-  box-shadow: 0 0 10px var(--crt-cyan-glow);
+  border: 2px solid var(--crt-green);
+  box-shadow: 0 0 10px var(--crt-green-glow);
   padding: 1.5rem;
 }
 
@@ -383,8 +383,8 @@ input,
 select,
 textarea {
   background-color: rgba(0, 37, 51, 0.8);
-  border: 2px solid var(--crt-cyan);
-  color: var(--crt-cyan);
+  border: 2px solid var(--crt-green);
+  color: var(--crt-green);
   font-family: var(--font-family);
 }
 
@@ -392,7 +392,7 @@ input:focus,
 select:focus,
 textarea:focus {
   border-color: var(--crt-light);
-  box-shadow: 0 0 10px var(--crt-cyan-glow);
+  box-shadow: 0 0 10px var(--crt-green-glow);
 }
 
 /* =========================================
@@ -400,17 +400,17 @@ textarea:focus {
    ========================================= */
 
 table {
-  border: 2px solid var(--crt-cyan);
+  border: 2px solid var(--crt-green);
 }
 
 th {
   background-color: rgba(0, 37, 51, 0.8);
-  color: var(--crt-cyan);
-  border-bottom: 2px solid var(--crt-cyan);
+  color: var(--crt-green);
+  border-bottom: 2px solid var(--crt-green);
 }
 
 td {
-  border-bottom: 1px dotted var(--crt-cyan-dim);
+  border-bottom: 1px dotted var(--crt-green-dim);
 }
 
 tr:hover {
@@ -422,9 +422,9 @@ tr:hover {
    ========================================= */
 
 blockquote {
-  border-left: 4px solid var(--crt-cyan);
+  border-left: 4px solid var(--crt-green);
   background-color: rgba(0, 37, 51, 0.5);
-  color: var(--crt-cyan-dim);
+  color: var(--crt-green-dim);
 }
 
 /* =========================================
@@ -433,8 +433,8 @@ blockquote {
 
 hr {
   border: none;
-  border-top: 2px dashed var(--crt-cyan);
-  box-shadow: 0 0 5px var(--crt-cyan-glow);
+  border-top: 2px dashed var(--crt-green);
+  box-shadow: 0 0 5px var(--crt-green-glow);
 }
 
 /* =========================================
@@ -442,7 +442,7 @@ hr {
    ========================================= */
 
 img {
-  filter: drop-shadow(0 0 5px var(--crt-cyan-glow));
+  filter: drop-shadow(0 0 5px var(--crt-green-glow));
 }
 
 /* =========================================
@@ -456,11 +456,11 @@ img {
 
 ::-webkit-scrollbar-track {
   background: var(--crt-black);
-  border: 1px solid var(--crt-cyan-dim);
+  border: 1px solid var(--crt-green-dim);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--crt-cyan);
+  background: var(--crt-green);
   border: 1px solid var(--crt-black);
 }
 
@@ -473,11 +473,11 @@ img {
    ========================================= */
 
 ::selection {
-  background-color: var(--crt-cyan);
+  background-color: var(--crt-green);
   color: var(--crt-black);
 }
 
 ::-moz-selection {
-  background-color: var(--crt-cyan);
+  background-color: var(--crt-green);
   color: var(--crt-black);
 }

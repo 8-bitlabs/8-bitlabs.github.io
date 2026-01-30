@@ -13,12 +13,12 @@
 .highlight .ch,
 .highlight .cd,
 .highlight .cpf {
-  color: #5c8a99;
+  color: #5c995c;
   font-style: italic;
 }
 .highlight .cp,
 .highlight .cs {
-  color: #5c8a99;
+  color: #5c995c;
   font-weight: bold;
 }
 
@@ -45,20 +45,20 @@
   color: #ff6b6b;
 }
 .highlight .gh {
-  color: #00aeef;
+  color: #33ff33;
 }
 .highlight .go {
-  color: #7ec8e3;
+  color: #98fb98;
 }
 .highlight .gp {
-  color: #00aeef;
+  color: #33ff33;
   font-weight: bold;
 }
 .highlight .gs {
   font-weight: bold;
 }
 .highlight .gu {
-  color: #00aeef;
+  color: #33ff33;
 }
 .highlight .gt {
   color: #ff6b6b;
@@ -72,11 +72,11 @@
 .highlight .kr,
 .highlight .k,
 .highlight .kv {
-  color: #00aeef;
+  color: #33ff33;
   font-weight: bold;
 }
 .highlight .kt {
-  color: #69d2e7;
+  color: #90ee90;
   font-weight: bold;
 }
 
@@ -119,20 +119,20 @@
 
 /* Names/Identifiers */
 .highlight .na {
-  color: #7ec8e3;
+  color: #98fb98;
 }
 .highlight .bp {
-  color: #7ec8e3;
+  color: #98fb98;
 }
 .highlight .nb {
-  color: #69d2e7;
+  color: #90ee90;
 }
 .highlight .nc {
-  color: #00aeef;
+  color: #33ff33;
   font-weight: bold;
 }
 .highlight .no {
-  color: #7ec8e3;
+  color: #98fb98;
 }
 .highlight .nd {
   color: #ff9f43;
@@ -147,39 +147,39 @@
 }
 .highlight .nf,
 .highlight .fm {
-  color: #69d2e7;
+  color: #90ee90;
   font-weight: bold;
 }
 .highlight .nl {
-  color: #00aeef;
+  color: #33ff33;
   font-weight: bold;
 }
 .highlight .nn {
-  color: #7ec8e3;
+  color: #98fb98;
 }
 .highlight .nt {
-  color: #00aeef;
+  color: #33ff33;
 }
 .highlight .vc,
 .highlight .vg,
 .highlight .vi,
 .highlight .nv,
 .highlight .vm {
-  color: #7ec8e3;
+  color: #98fb98;
 }
 
 /* Operators */
 .highlight .ow {
-  color: #00aeef;
+  color: #33ff33;
   font-weight: bold;
 }
 .highlight .o {
-  color: #00aeef;
+  color: #33ff33;
 }
 
 /* Whitespace */
 .highlight .w {
-  color: #3d5a6c;
+  color: #3d6c3d;
 }
 
 /* Base highlight block */
@@ -191,9 +191,9 @@
 
 /* Line numbers */
 .highlight .lineno {
-  color: #3d5a6c;
+  color: #3d6c3d;
   padding-right: 1em;
-  border-right: 1px solid #00aeef;
+  border-right: 1px solid #33ff33;
   margin-right: 1em;
   user-select: none;
 }
