@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap);
+@import url(https://fonts.googleapis.com/css?family=VT323&display=swap);
+
+/* =========================================
+   FLARE-ON INSPIRED CRT THEME
+   ========================================= */
 
 /* Global CSS variables */
 :root {
@@ -6,7 +10,30 @@
   --border-radius: 0;
   --header-height: 134px;
   --spacing-header: 3rem;
+
+  /* Flare-On Color Palette */
+  --crt-cyan: #00aeef;
+  --crt-cyan-dim: rgba(0, 174, 239, 0.7);
+  --crt-cyan-glow: rgba(0, 174, 239, 0.35);
+  --crt-dark: #002533;
+  --crt-black: #000000;
+  --crt-light: #f0f0f0;
+
+  /* Override Pico CSS colors */
+  --primary: var(--crt-cyan);
+  --primary-hover: var(--crt-light);
+  --primary-focus: var(--crt-cyan-glow);
+  --background-color: var(--crt-black);
+  --color: var(--crt-cyan);
+  --muted-color: var(--crt-cyan-dim);
+  --contrast: var(--crt-light);
+  --contrast-hover: var(--crt-cyan);
+
+  /* Typography */
+  --font-family: "VT323", monospace;
+  --font-size: 20px;
 }
+
 @media (min-width: 576px) {
   :root {
     --header-height: 200px;
@@ -28,47 +55,161 @@
   }
 }
 
-
-
+/* Pagination colors - keep consistent */
 [data-theme=light],
 :root:not([data-theme=dark]) {
-  --pagination-background: #edeff3;
-  --pagination-color: hsl(205, 10%, 50%);
+  --pagination-background: var(--crt-black);
+  --pagination-color: var(--crt-cyan-dim);
 }
 
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --pagination-background: #141e26;
-    --pagination-color: hsl(205, 10%, 50%);
+    --pagination-background: var(--crt-black);
+    --pagination-color: var(--crt-cyan-dim);
   }
 }
 [data-theme=dark] {
-  --pagination-background: #141e26;
-  --pagination-color: hsl(205, 10%, 50%);
+  --pagination-background: var(--crt-black);
+  --pagination-color: var(--crt-cyan-dim);
 }
 
-/* Typography */
+/* Force dark theme colors regardless of system preference */
+:root,
+[data-theme=light],
+[data-theme=dark] {
+  --background-color: var(--crt-black);
+  --color: var(--crt-cyan);
+  --primary: var(--crt-cyan);
+  --secondary: var(--crt-dark);
+  --muted-color: var(--crt-cyan-dim);
+  --card-background-color: rgba(0, 37, 51, 0.8);
+  --card-border-color: var(--crt-cyan);
+  --card-sectionning-background-color: rgba(0, 37, 51, 0.5);
+}
+
+/* =========================================
+   CRT EFFECT
+   ========================================= */
+
+/* Apply CRT effect to body */
+body {
+  background: radial-gradient(ellipse at center, var(--crt-cyan-glow) 0%, var(--crt-black) 100%);
+  background-attachment: fixed;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--crt-cyan);
+  text-shadow: 0 0 4px var(--crt-cyan);
+  position: relative;
+}
+
+/* CRT Scanlines Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* CRT Flicker Animation */
+@keyframes crt-flicker {
+  0% { opacity: 0.97; }
+  5% { opacity: 0.95; }
+  10% { opacity: 0.98; }
+  15% { opacity: 0.96; }
+  20% { opacity: 0.99; }
+  25% { opacity: 0.94; }
+  30% { opacity: 0.98; }
+  35% { opacity: 0.97; }
+  40% { opacity: 0.95; }
+  45% { opacity: 0.98; }
+  50% { opacity: 0.96; }
+  55% { opacity: 0.99; }
+  60% { opacity: 0.95; }
+  65% { opacity: 0.97; }
+  70% { opacity: 0.98; }
+  75% { opacity: 0.94; }
+  80% { opacity: 0.97; }
+  85% { opacity: 0.99; }
+  90% { opacity: 0.96; }
+  95% { opacity: 0.98; }
+  100% { opacity: 0.97; }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: crt-flicker 0.15s infinite;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  color: var(--crt-cyan);
+  text-shadow: 0 0 8px var(--crt-cyan);
+  font-weight: 400;
+}
+
 h2,
 h3,
 hgroup> :last-child {
-  font-weight: 200;
+  font-weight: 400;
 }
 
 small {
   color: var(--muted-color);
 }
 
-/* Header */
+/* =========================================
+   LINKS
+   ========================================= */
+
+a {
+  color: var(--crt-light);
+  text-shadow: 0 0 4px var(--crt-cyan);
+  text-decoration: underline;
+  transition: all 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--crt-cyan);
+  text-shadow: 0 0 10px var(--crt-cyan), 0 0 20px var(--crt-cyan);
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
 .hero {
   background-color: black;
   background-image: url("/assets/img/header1.png");
   background-position: center;
   background-size: cover;
   height: var(--header-height);
+  border-bottom: 3px solid var(--crt-cyan);
+  box-shadow: 0 0 20px var(--crt-cyan-glow);
 }
 
 hgroup h2 {
-  font-family: "Press Start 2P", sans-serif;
+  font-family: var(--font-family);
   font-weight: normal;
   font-size: 1rem;
   color: var(--primary);
@@ -93,14 +234,22 @@ header.container hgroup> :last-child {
 
 header.container hgroup {
   margin-bottom: var(--spacing-header);
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid var(--crt-cyan);
+  box-shadow: 0 0 15px var(--crt-cyan-glow), inset 0 0 30px rgba(0, 174, 239, 0.1);
   margin-top: -40px;
   padding-left: 30px;
+  padding-right: 30px;
 }
 
 header.container hgroup h1 {
   font-size: 40px;
   text-align: center;
+}
+
+header.container hgroup h1 a {
+  color: var(--crt-cyan);
+  text-decoration: none;
 }
 
 header.container hgroup h2 {
@@ -123,7 +272,22 @@ header.container hgroup h2 {
   }
 }
 
-/* Nav */
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+nav {
+  font-family: var(--font-family);
+}
+
+nav a {
+  color: var(--crt-light);
+}
+
+nav a:hover {
+  color: var(--crt-cyan);
+}
+
 summary[role="link"].contrast:is([aria-current], :hover, :active, :focus) {
   background-color: transparent;
   color: var(--contrast-hover);
@@ -134,16 +298,189 @@ summary svg {
   margin-right: -8px;
 }
 
+/* =========================================
+   CODE BLOCKS
+   ========================================= */
+
 code {
-  font-family: "Fira Mono", Menlo, Consolas, monospace;
+  font-family: "Fira Mono", "VT323", Menlo, Consolas, monospace;
+  background-color: rgba(0, 37, 51, 0.8);
+  color: var(--crt-light);
+  border: 1px solid var(--crt-cyan);
+  text-shadow: none;
 }
 
+pre {
+  background-color: rgba(0, 37, 51, 0.9);
+  border: 2px solid var(--crt-cyan);
+  box-shadow: 0 0 10px var(--crt-cyan-glow), inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+pre code {
+  border: none;
+  background: transparent;
+}
+
+/* =========================================
+   PAGINATION
+   ========================================= */
+
 nav.pagination {
-  background-color: var(--pagination-background);
+  background-color: rgba(0, 37, 51, 0.8);
   color: var(--pagination-color);
   margin-top: -40px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 30px;
   padding-right: 30px;
+  border: 2px solid var(--crt-cyan);
+  box-shadow: 0 0 10px var(--crt-cyan-glow);
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  background-color: var(--crt-cyan);
+  color: var(--crt-dark);
+  border: 3px solid var(--crt-cyan);
+  font-family: var(--font-family);
+  text-shadow: none;
+  transition: all 0.2s ease;
+}
+
+button:hover,
+[role="button"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: var(--crt-dark);
+  color: var(--crt-cyan);
+  border: 3px dashed var(--crt-cyan);
+  box-shadow: 0 0 15px var(--crt-cyan-glow);
+}
+
+/* =========================================
+   CARDS & ARTICLES
+   ========================================= */
+
+article {
+  background-color: rgba(0, 37, 51, 0.6);
+  border: 2px solid var(--crt-cyan);
+  box-shadow: 0 0 10px var(--crt-cyan-glow);
+}
+
+article header,
+article footer {
+  background-color: rgba(0, 37, 51, 0.8);
+}
+
+/* =========================================
+   FORMS
+   ========================================= */
+
+input,
+select,
+textarea {
+  background-color: rgba(0, 37, 51, 0.8);
+  border: 2px solid var(--crt-cyan);
+  color: var(--crt-cyan);
+  font-family: var(--font-family);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--crt-light);
+  box-shadow: 0 0 10px var(--crt-cyan-glow);
+}
+
+/* =========================================
+   TABLES
+   ========================================= */
+
+table {
+  border: 2px solid var(--crt-cyan);
+}
+
+th {
+  background-color: rgba(0, 37, 51, 0.8);
+  color: var(--crt-cyan);
+  border-bottom: 2px solid var(--crt-cyan);
+}
+
+td {
+  border-bottom: 1px dotted var(--crt-cyan-dim);
+}
+
+tr:hover {
+  background-color: rgba(0, 174, 239, 0.1);
+}
+
+/* =========================================
+   BLOCKQUOTES
+   ========================================= */
+
+blockquote {
+  border-left: 4px solid var(--crt-cyan);
+  background-color: rgba(0, 37, 51, 0.5);
+  color: var(--crt-cyan-dim);
+}
+
+/* =========================================
+   HORIZONTAL RULES
+   ========================================= */
+
+hr {
+  border: none;
+  border-top: 2px dashed var(--crt-cyan);
+  box-shadow: 0 0 5px var(--crt-cyan-glow);
+}
+
+/* =========================================
+   IMAGES
+   ========================================= */
+
+img {
+  filter: drop-shadow(0 0 5px var(--crt-cyan-glow));
+}
+
+/* =========================================
+   SCROLLBAR STYLING
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--crt-black);
+  border: 1px solid var(--crt-cyan-dim);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--crt-cyan);
+  border: 1px solid var(--crt-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--crt-light);
+}
+
+/* =========================================
+   SELECTION
+   ========================================= */
+
+::selection {
+  background-color: var(--crt-cyan);
+  color: var(--crt-black);
+}
+
+::-moz-selection {
+  background-color: var(--crt-cyan);
+  color: var(--crt-black);
 }
