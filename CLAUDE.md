@@ -30,13 +30,13 @@ layout: post
 published: true
 date: 2024-01-01 00:00:00 -0500
 title: My Post Title
-tags: ["6502", "Z80"]
+tags: ["6502", "z80"]
 ---
 Content in Markdown...
 ```
 
 - Drafts go in `_drafts/` (see `_drafts/template.md`)
-- Valid tags correspond to files in `Tags/` directory: 6502, 8080, Z80, agon, c64, eater, gameboy, rc2014
+- Valid tags correspond to files in `Tags/` directory: 6502, 8080, z80, agon, c64, eater, gameboy, rc2014
 - Images go in `assets/img/`, downloadable files in `assets/files/`
 - Permalink format: `/Posts/YYYY/MM/DD/title`
 
